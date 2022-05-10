@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define PRINT_SIZE(typeDesc, typeName) ( printf("size of %s : %zu bytes \n", typeDesc, sizeof(typeName)) )
+
 int main() {
   // Please print the sizes of the following types:
   // int, short, long, char, float, double, unsigned int, long long
@@ -15,6 +17,7 @@ int main() {
   printf("size of %s : %zu bytes \n", "int", sizeof(int));
   // e.g. PRINT_SIZE("int", int);
   //      PRINT_SIZE("short", short);
+  PRINT_SIZE("short", short);
 
   // Alternatively, you can use stringification
   // (https://gcc.gnu.org/onlinedocs/cpp/Stringification.html) so that

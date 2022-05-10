@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libx11-dev \
     xorg-dev \
     xterm \
+    less \
     emacs # optional - can replace with editor of choice
 
 RUN add-apt-repository -y ppa:wsmoses/tapir-toolchain \
