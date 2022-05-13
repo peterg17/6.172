@@ -10,7 +10,7 @@
 2. (For Mac) Download XQuartz if you havent
    - In the XQuartz interface, go to the `Preferences > Security`tab and enable "Allow connections from network clients".
    - In the xterm shell (which opens when you open XQuartz), run:
-     `xhost +localhost`
+     `xhost + localhost`
    
    
 3. Create container with docker X11 passthrough
