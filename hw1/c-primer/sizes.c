@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define PRINT_SIZE(typeDesc, typeName) ( printf("size of %s : %zu bytes \n", typeDesc, sizeof(typeName)) )
+#define PRINT_SIZE(typeName) ( printf("size of %s : %zu bytes \n", #typeName, sizeof(typeName)) )
 
 int main() {
   // Please print the sizes of the following types:
@@ -14,10 +14,9 @@ int main() {
 
   // Here's how to show the size of one type. See if you can define a macro
   // to avoid copy pasting this code.
-  printf("size of %s : %zu bytes \n", "int", sizeof(int));
+  /* printf("size of %s : %zu bytes \n", "int", sizeof(int)); */
   // e.g. PRINT_SIZE("int", int);
   //      PRINT_SIZE("short", short);
-  PRINT_SIZE("short", short);
 
   // Alternatively, you can use stringification
   // (https://gcc.gnu.org/onlinedocs/cpp/Stringification.html) so that
@@ -25,21 +24,42 @@ int main() {
   // e.g. PRINT_SIZE(int);
   //      PRINT_SIZE(short);
 
+  PRINT_SIZE(int);
+  PRINT_SIZE(short);
+  PRINT_SIZE(long);
+  PRINT_SIZE(char);
+  PRINT_SIZE(float);
+  PRINT_SIZE(double);
+  PRINT_SIZE(unsigned int);
+  PRINT_SIZE(long long);
+  PRINT_SIZE(uint8_t);
+  PRINT_SIZE(uint16_t);
+  PRINT_SIZE(uint32_t);
+  PRINT_SIZE(uint64_t);
+  PRINT_SIZE(uint_fast8_t);
+  PRINT_SIZE(uint_fast16_t);
+  PRINT_SIZE(uintmax_t);
+  PRINT_SIZE(intmax_t);
+  PRINT_SIZE(__int128);
+
   // Composite types have sizes too.
   typedef struct {
     int id;
     int year;
+    char firstInitial;
   } student;
 
   student you;
   you.id = 12345;
   you.year = 4;
+  you.firstInitial = 'p';
 
 
   // Array declaration. Use your macro to print the size of this.
   int x[5];
 
   // You can just use your macro here instead: PRINT_SIZE("student", you);
+  PRINT_SIZE(x);
   printf("size of %s : %zu bytes \n", "student", sizeof(you));
 
   return 0;

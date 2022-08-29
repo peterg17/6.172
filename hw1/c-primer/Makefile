@@ -1,4 +1,4 @@
-CC := clang
+CC := clang-5.0
 
 ifeq ($(DEBUG),1)
 	CFLAGS := -Wall -O0 -g
@@ -6,7 +6,7 @@ else
 	CFLAGS := -Wall -O1 -DNDEBUG 
 endif
 
-LDFLAGS := -lrt -flto -fuse-ld=gold
+LDFLAGS := -lrt
 
 all: sizes pointer swap
 
