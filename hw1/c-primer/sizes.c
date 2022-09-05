@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 #define PRINT_SIZE(typeName) ( printf("size of %s : %zu bytes \n", #typeName, sizeof(typeName)) )
+#define PRINT_POINTER_SIZE(typeName, typeObj) ( printf("size of %s* is : %zu bytes \n", #typeName, sizeof(&typeObj)))
 
 int main() {
   // Please print the sizes of the following types:
@@ -59,8 +60,49 @@ int main() {
   int x[5];
 
   // You can just use your macro here instead: PRINT_SIZE("student", you);
+  PRINT_SIZE(student);
   PRINT_SIZE(x);
-  printf("size of %s : %zu bytes \n", "student", sizeof(you));
+
+
+  // print out pointer sizes to different types
+  int i;
+  short s;
+  long l;
+  char c;
+  float f;
+  double d;
+  unsigned int ui;
+  long long ll;
+  uint8_t ui8;
+  uint16_t ui16;
+  uint32_t ui32;
+  uint64_t ui64;
+  uint_fast8_t uif8;
+  uint_fast16_t uif16;
+  uintmax_t uiMax;
+  intmax_t iMax;
+  __int128 i128;
+
+  PRINT_POINTER_SIZE(int, i);
+  PRINT_POINTER_SIZE(short, s);
+  PRINT_POINTER_SIZE(long, l);
+  PRINT_POINTER_SIZE(char, c);
+  PRINT_POINTER_SIZE(float, f);
+  PRINT_POINTER_SIZE(double, d);
+  PRINT_POINTER_SIZE(unsigned int, ui);
+  PRINT_POINTER_SIZE(long long, ll);
+  PRINT_POINTER_SIZE(uint8_t, ui8);
+  PRINT_POINTER_SIZE(uint16_t, ui16);
+  PRINT_POINTER_SIZE(uint32_t, ui32);
+  PRINT_POINTER_SIZE(uint64_t, ui64);
+  PRINT_POINTER_SIZE(uint_fast8_t, uif8);
+  PRINT_POINTER_SIZE(uint_fast16_t, uif16);
+  PRINT_POINTER_SIZE(uintmax_t, uiMax);
+  PRINT_POINTER_SIZE(intmax_t, iMax);
+  PRINT_POINTER_SIZE(__int128, i128);
+  PRINT_POINTER_SIZE(student, you);
+  PRINT_POINTER_SIZE(&x, x);
+
 
   return 0;
 }

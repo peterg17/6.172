@@ -16,7 +16,7 @@ int main(int argc, char * argv[]) {  // What is the type of argv?
   char * pc = c;  // Valid assignment: c acts like a pointer to c[0] here.
   char d = *pc;
   printf("char d = %c\n", d);  // What does this print?
-  printf("char d = %c\n", d);  // What does this print?
+  printf("char pc = %p\n", pc);  // What does this print?
 
   // compound types are read right to left in C.
   // pcp is a pointer to a pointer to a char, meaning that

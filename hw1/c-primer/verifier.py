@@ -40,7 +40,7 @@ def runAndCheckSizes():
         ( "__int128", 16 ),
         ( "uint32_t", 4 ),
         ( "uint64_t", 8 ),
-        ( "student", 8 ),
+        ( "student", 12 ),
 	( "x", 20),
         ( "int*", 8 ),
         ( "short*", 8 ),
